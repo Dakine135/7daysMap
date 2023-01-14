@@ -1,0 +1,29 @@
+{
+  "name": "7daysmap",
+  "version": "1.0.0",
+  "description": "7 days to die map with overlay for labels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dakine135/7daysMap.git"
+  },
+  "keywords": [
+    "7",
+    "days",
+    "to",
+    "die",
+    "map"
+  ],
+  "author": "dustin welborn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dakine135/7daysMap/issues"
+  },
+  "homepage": "https://github.com/Dakine135/7daysMap#readme",
+  "dependencies": {
+    "firebase": "^9.15.0"
+  }
+}
