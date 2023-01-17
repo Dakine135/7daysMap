@@ -4,7 +4,7 @@ import { defineComponent } from 'vue'
 import map19Labels from '@/assets/map/Navezgane_19_Labels.png'
 import map20 from '@/assets/map/Navezgane_20.png'
 
-const canvasToMakeTSHappy = document.createElement('canvas');
+const canvasToMakeTSHappy: any = document.createElement('canvas');
 const renderToMakeTSHappy: any  = canvasToMakeTSHappy.getContext('2d');
 
 const mapSizePixels = 6144;
@@ -12,10 +12,10 @@ const mapSizePixels = 6144;
 var requestAnimFrame = (function (callback) {
             return (
                 window.requestAnimationFrame ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                window.oRequestAnimationFrame ||
-                window.msRequestAnimationFrame ||
+                // window.webkitRequestAnimationFrame ||
+                // window.mozRequestAnimationFrame ||
+                // window.oRequestAnimationFrame ||
+                // window.msRequestAnimationFrame ||
                 function (callback) {
                     window.setTimeout(callback, 1000 / 60);
                 }
@@ -128,7 +128,8 @@ export default defineComponent( {
             this.mapCanvas.height = this.screenHeight;
             this.LabelCanvas.width = this.screenWidth;
             this.LabelCanvas.height = this.screenHeight;
-            document.getElementById('stage').setAttribute('style', `height:${this.LabelCanvas.height + 20}px;`);
+            const stageDiv: any = document.getElementById('stage');
+            stageDiv.setAttribute('style', `height:${this.LabelCanvas.height + 20}px;`);
         },
         getMousePos(canvas: HTMLCanvasElement, event:MouseEvent) {
             let rect = canvas.getBoundingClientRect();
@@ -137,16 +138,16 @@ export default defineComponent( {
                 y: event.clientY - rect.top
             };
         },
-        mouseMoved(event) {
+        mouseMoved(event:any) {
             let mousePos = this.getMousePos(this.LabelCanvas, event);
             this.mouseX = mousePos.x;
             this.mouseY = mousePos.y;
         },
-        mouseClick(event) {
+        mouseClick(event:any) {
           console.log('Click')
             this.showAllLabel = true;
         },
-        mouseReleased(event) {
+        mouseReleased(event:any) {
           this.showAllLabel = false;
         }
     },
